@@ -1,0 +1,313 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)" pages="1">
+  <diagram name="Аренда инструмента" id="lab2-bpmn-no-auto">
+    <mxGraphModel dx="1500" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Main process container -->
+        <mxCell id="PROC" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;horizontal=1;startSize=30;horizontalStack=0;html=1;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=14;fontStyle=1;" value="Аренда строительного инструмента (без автоматизации)" vertex="1">
+          <mxGeometry x="40" y="60" width="1620" height="500" as="geometry" />
+        </mxCell>
+
+        <!-- Client lane -->
+        <mxCell id="CL" parent="PROC" style="swimlane;startSize=20;horizontal=0;html=1;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=12;" value="Клиент" vertex="1">
+          <mxGeometry y="30" height="140" width="1620" as="geometry" />
+        </mxCell>
+
+        <!-- Manager lane -->
+        <mxCell id="ML" parent="PROC" style="swimlane;startSize=20;horizontal=0;html=1;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=12;" value="Менеджер по аренде" vertex="1">
+          <mxGeometry y="170" height="330" width="1620" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CLIENT LANE ELEMENTS ========== -->
+
+        <!-- C1: Start event -->
+        <mxCell id="C1" parent="CL" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=general;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="60" y="58" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="C1L" parent="CL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Прибытие в пункт аренды" vertex="1">
+          <mxGeometry x="20" y="85" width="100" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- C2: Receive availability notification -->
+        <mxCell id="C2" parent="CL" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="395" y="55" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C2L" parent="CL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Уведомление о наличии" vertex="1">
+          <mxGeometry x="360" y="88" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- C3: Provide passport -->
+        <mxCell id="C3" parent="CL" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=10;" value="Предоставление паспорта менеджеру" vertex="1">
+          <mxGeometry x="500" y="35" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- C4: Receive agreement -->
+        <mxCell id="C4" parent="CL" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="780" y="55" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C4L" parent="CL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Бланк договора аренды" vertex="1">
+          <mxGeometry x="745" y="88" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- C5: Sign agreement and pay -->
+        <mxCell id="C5" parent="CL" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=10;" value="Подписание договора и внесение оплаты" vertex="1">
+          <mxGeometry x="880" y="32" width="140" height="56" as="geometry" />
+        </mxCell>
+
+        <!-- C6: Receive tool -->
+        <mxCell id="C6" parent="CL" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="1175" y="55" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C6L" parent="CL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Инструмент и чек выданы" vertex="1">
+          <mxGeometry x="1140" y="88" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- C7: End event -->
+        <mxCell id="C7" parent="CL" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="1310" y="55" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="C7L" parent="CL" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Инструмент получен" vertex="1">
+          <mxGeometry x="1275" y="88" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- ========== CLIENT LANE SEQUENCE FLOWS ========== -->
+        <mxCell id="EC1C2" parent="CL" edge="1" source="C1" target="C2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EC2C3" parent="CL" edge="1" source="C2" target="C3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EC3C4" parent="CL" edge="1" source="C3" target="C4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EC4C5" parent="CL" edge="1" source="C4" target="C5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EC5C6" parent="CL" edge="1" source="C5" target="C6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EC6C7" parent="CL" edge="1" source="C6" target="C7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== MANAGER LANE ELEMENTS ========== -->
+
+        <!-- M1: Start message receive (client request) -->
+        <mxCell id="M1" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="60" y="148" width="24" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="M1L" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Запрос инструмента от клиента" vertex="1">
+          <mxGeometry x="25" y="175" width="95" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- M2: Search tool in ledger -->
+        <mxCell id="M2" parent="ML" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=10;" value="Поиск инструмента в журнале учёта" vertex="1">
+          <mxGeometry x="140" y="135" width="140" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- M3: Gateway - tool available? -->
+        <mxCell id="M3" parent="ML" style="points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="330" y="140" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M3Q" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Инструмент доступен?" vertex="1">
+          <mxGeometry x="292" y="108" width="115" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- M4: Notify unavailability (no branch) -->
+        <mxCell id="M4" parent="ML" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=10;" value="Уведомление клиента об отсутствии инструмента" vertex="1">
+          <mxGeometry x="390" y="242" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- M5: End - no tool -->
+        <mxCell id="M5" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="550" y="252" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="M5L" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Аренда не состоялась" vertex="1">
+          <mxGeometry x="590" y="252" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- M6: Send availability notification (yes branch) -->
+        <mxCell id="M6" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="415" y="148" width="24" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- M7: Receive passport -->
+        <mxCell id="M7" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="530" y="145" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="M7L" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Паспорт клиента" vertex="1">
+          <mxGeometry x="498" y="178" width="95" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- M8: Check documents -->
+        <mxCell id="M8" parent="ML" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=10;" value="Проверка документов клиента" vertex="1">
+          <mxGeometry x="625" y="135" width="130" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- M9: Gateway - documents ok? -->
+        <mxCell id="M9" parent="ML" style="points=[[0.25,0.25,0],[0.5,0,0],[0.75,0.25,0],[1,0.5,0],[0.75,0.75,0],[0.5,1,0],[0.25,0.75,0],[0,0.5,0]];shape=mxgraph.bpmn.gateway2;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=rhombusPerimeter;outlineConnect=0;outline=none;symbol=none;gwType=exclusive;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="805" y="140" width="40" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="M9Q" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Документы в порядке?" vertex="1">
+          <mxGeometry x="768" y="108" width="115" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- M10: End - bad documents -->
+        <mxCell id="M10" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="865" y="252" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="M10L" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Аренда не состоялась" vertex="1">
+          <mxGeometry x="905" y="252" width="110" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- M11: Fill agreement + calculate cost -->
+        <mxCell id="M11" parent="ML" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=10;" value="Заполнение бланка договора и расчёт стоимости аренды" vertex="1">
+          <mxGeometry x="910" y="120" width="160" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- M12: Send agreement to client -->
+        <mxCell id="M12" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="1110" y="148" width="24" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- M13: Receive signed agreement + payment -->
+        <mxCell id="M13" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=catching;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="1205" y="145" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="M13L" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Подписанный договор + оплата" vertex="1">
+          <mxGeometry x="1165" y="178" width="110" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- M14: Issue tool and receipt -->
+        <mxCell id="M14" parent="ML" style="points=[[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0.25,0],[1,0.5,0],[1,0.75,0],[0.75,1,0],[0.5,1,0],[0.25,1,0],[0,0.75,0],[0,0.5,0],[0,0.25,0]];shape=mxgraph.bpmn.task2;whiteSpace=wrap;rectStyle=rounded;size=10;html=1;container=1;expand=0;collapsible=0;taskMarker=abstract;labelBackgroundColor=none;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;fontSize=10;" value="Выдача инструмента и квитанции, запись в журнале" vertex="1">
+          <mxGeometry x="1305" y="125" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- M15: Send tool to client -->
+        <mxCell id="M15" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=standard;symbol=message;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="1490" y="148" width="24" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- M16: End event - rental complete -->
+        <mxCell id="M16" parent="ML" style="points=[[0.145,0.145,0],[0.5,0,0],[0.855,0.145,0],[1,0.5,0],[0.855,0.855,0],[0.5,1,0],[0.145,0.855,0],[0,0.5,0]];shape=mxgraph.bpmn.event;html=1;verticalLabelPosition=bottom;labelBackgroundColor=none;verticalAlign=top;align=center;perimeter=ellipsePerimeter;outlineConnect=0;aspect=fixed;outline=end;symbol=terminate2;fillColor=#FAE5C7;strokeColor=#0F8B8D;fontColor=#143642;" value="" vertex="1">
+          <mxGeometry x="1560" y="145" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="M16L" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="Аренда оформлена" vertex="1">
+          <mxGeometry x="1525" y="178" width="100" height="25" as="geometry" />
+        </mxCell>
+
+        <!-- Gateway path labels -->
+        <mxCell id="M3YES" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="доступен" vertex="1">
+          <mxGeometry x="357" y="148" width="55" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="M3NO" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="не доступен" vertex="1">
+          <mxGeometry x="298" y="196" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="M9YES" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="в порядке" vertex="1">
+          <mxGeometry x="848" y="148" width="60" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="M9NO" parent="ML" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;fontSize=9;labelBackgroundColor=none;fontColor=#143642;" value="проблемы" vertex="1">
+          <mxGeometry x="773" y="196" width="65" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ========== MANAGER LANE SEQUENCE FLOWS ========== -->
+        <mxCell id="EM1M2" parent="ML" edge="1" source="M1" target="M2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM2M3" parent="ML" edge="1" source="M2" target="M3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- M3 → M4 (no branch, going down) -->
+        <mxCell id="EM3M4" parent="ML" edge="1" source="M3" target="M4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="350" y="267" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="EM4M5" parent="ML" edge="1" source="M4" target="M5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- M3 → M6 (yes branch) -->
+        <mxCell id="EM3M6" parent="ML" edge="1" source="M3" target="M6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM6M7" parent="ML" edge="1" source="M6" target="M7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM7M8" parent="ML" edge="1" source="M7" target="M8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM8M9" parent="ML" edge="1" source="M8" target="M9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- M9 → M10 (no branch, going down) -->
+        <mxCell id="EM9M10" parent="ML" edge="1" source="M9" target="M10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="825" y="267" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- M9 → M11 (yes branch) -->
+        <mxCell id="EM9M11" parent="ML" edge="1" source="M9" target="M11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM11M12" parent="ML" edge="1" source="M11" target="M12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM12M13" parent="ML" edge="1" source="M12" target="M13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM13M14" parent="ML" edge="1" source="M13" target="M14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM14M15" parent="ML" edge="1" source="M14" target="M15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="EM15M16" parent="ML" edge="1" source="M15" target="M16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ========== MESSAGE FLOWS (cross-lane, parent=PROC) ========== -->
+
+        <!-- C1 → M1: Client arrives, manager receives request -->
+        <mxCell id="MF1" parent="PROC" edge="1" source="C1" target="M1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- M6 → C2: Manager sends availability notification -->
+        <mxCell id="MF2" parent="PROC" edge="1" source="M6" target="C2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- C3 → M7: Client hands over passport -->
+        <mxCell id="MF3" parent="PROC" edge="1" source="C3" target="M7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- M12 → C4: Manager sends agreement to client -->
+        <mxCell id="MF4" parent="PROC" edge="1" source="M12" target="C4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- C5 → M13: Client hands over signed agreement + payment -->
+        <mxCell id="MF5" parent="PROC" edge="1" source="C5" target="M13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- M15 → C6: Manager issues tool to client -->
+        <mxCell id="MF6" parent="PROC" edge="1" source="M15" target="C6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;dashed=1;strokeColor=#A8201A;fontColor=#143642;labelBackgroundColor=none;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
